@@ -1,0 +1,44 @@
+{
+  "name": "memoize-lru",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "all": "npm run clean && npm run lint && npm run prettier && npm run build:release && npm run test && npm run package-content",
+    "clean": "rm -rf dist/",
+    "lint": "eslint src --ext .ts",
+    "prettier": "prettier --check src",
+    "build": "tsc",
+    "build:release": "tsc -p tsconfig.release.json",
+    "test": "jest",
+    "package-content": "npm pack --dry-run",
+    "prepare": "husky install"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lru-cache": "^10.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.7",
+    "@commitlint/config-conventional": "^17.6.7",
+    "@types/jest": "^29.5.3",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.10.0",
+    "husky": "^8.0.3",
+    "jest": "^29.6.2",
+    "prettier": "3.0.1",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  }
+}
